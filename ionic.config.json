@@ -1,0 +1,7 @@
+{
+  "name": "SofterStyle",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "angular"
+}

@@ -1,0 +1,44 @@
+<ion-header [translucent]="true">
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+    <ion-back-button (click)="goToH()" defaultHref="/home"></ion-back-button>
+  </ion-buttons>
+    <ion-title>Détails</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding [fullscreen]="true">
+  <ion-card-content>
+    <ion-item>
+      <ion-button color="danger" slot="end" large shape="round" (click)="deleteProduct(articles)">Supprimer</ion-button>
+    </ion-item>
+  <ion-slides pager="true" autoplay="1000" loop="true">
+    <ion-slide>
+      <img [src]="articles?.image">
+    </ion-slide>
+  </ion-slides>
+</ion-card-content>
+ <ion-card-content color="primary">
+   <ion-chip>
+     Taille: {{articles?.taille}}
+   </ion-chip>
+   <ion-chip>
+    Statut: {{articles?.infoSup?.statut}}
+  </ion-chip>
+ </ion-card-content>
+ <ion-card-content>
+  <ion-chip color="primary">
+    Catégorie:{{articles?.infoSup?.categorie}}
+  </ion-chip>
+  <ion-chip>
+    Couleur:{{articles?.infoSup?.couleur}}
+  </ion-chip>
+</ion-card-content>
+<ion-card-content>
+  <h1>Prix: {{articles?.prix | currency}}</h1>
+</ion-card-content>
+<ion-card-content>
+   <h2> Description</h2>
+   <p>{{articles?.description}}</p>
+</ion-card-content>
+</ion-content>
